@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<title>test</title>
+	<style type="text/css">
+	/******************固定宽高div垂直水平居中方法**********************/
+	/*html,body{
+		width: 100%;
+		height: 100%;
+		margin:0;
+		padding: 0;
+	}
+	.div1{
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+	.div2{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 400px;
+		height: 200px;
+		margin-left: -200px;
+		margin-top:-100px; 
+		background-color: red;
+	}*/
+/***************父元素宽高确定，内容可用表居中方式垂直水平居中***********************/
+	div#wrap {
+	 width: 760px;
+	 height: 500px;
+	 background-color: #fc0;
+	 display:table;
+	 }
+	  div#content {
+	  vertical-align:middle;
+	  text-align: center;
+	  display:table-cell;
+	}
+
+/**************************不固定宽高元素的水平垂直居中******************************/
+	/* This parent can be any width and height */
+	.block {
+	  text-align: center;
+	  background-color: #fc0;
+	}
+
+	/* The ghost, nudged to maintain perfect centering */
+	.block:before {
+	  content: '';
+	  display: inline-block;
+	  height: 100%;
+	  vertical-align: middle;
+	  margin-right: -0.25em; /* Adjusts for spacing */
+	 background-color: red;
+	}
+
+	/* The element to be centered, can
+   also be of any width and height */ 
+	.centered {
+	  display: inline-block;
+	  vertical-align: middle;
+	  width: 30%;
+	  background-color: #fff;
+	}
+/************************center元素直接在body中固定定位，居中***************************/
+	#center{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 50%;
+		height: 50%;
+		background-color: #ffc;
+		-webkit-transform: translateX(-50%) translateY(-50%);
+		   -moz-transform: translateX(-50%) translateY(-50%);
+		    -ms-transform: translateX(-50%) translateY(-50%);
+		     -o-transform: translateX(-50%) translateY(-50%);
+		        transform: translateX(-50%) translateY(-50%);
+	}
+	</style>
+</head>
+<body>
+<!-- <div class="div1">
+<div class="div2">固定宽高div水平垂直内容</div>
+</div> -->
+
+<!-- <div id="wrap">
+<div id="content">
+	<pre>现在我们要使这段文字垂直居中显示！
+ div#wrap {
+  border:1px solid #FF0099;
+  background-color:#FFCCFF;
+  width:760px;
+  height:500px;
+  position:relative;
+ }
+ div#content {
+  border:1px solid #000;
+  position:relative;
+  top:-50%;
+ }</pre>
+</div>
+</div> -->
+<!-- <div class="block" style="">
+
+    <div class="centered">
+        <h1>haorooms案例题目</h1>
+        <p>haorooms案例内容，haorooms案例内容haorooms案例内容haorooms案例内容haorooms案例内容haorooms案例内容haorooms案例内容haorooms案例内容haorooms案例内容</p>
+    </div>
+
+</div> -->
+
+<div id="center"></div>
+
+</body>
+</html>
